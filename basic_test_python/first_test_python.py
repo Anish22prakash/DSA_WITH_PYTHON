@@ -1,0 +1,1 @@
+print("hii this is my first code , now onwards i am going to daily practice dsa with python")
