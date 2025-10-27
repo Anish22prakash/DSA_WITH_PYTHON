@@ -1,0 +1,28 @@
+arr = [2,3,4]
+target = 5 
+
+def findSum_arr_not_sorted(arr,target):
+    seen ={}
+    for i , num in enumerate(arr):
+        complement = target - arr[i]
+        if complement in seen :
+            return [seen[complement], i]
+        seen[num] = i
+    
+print(f"array is not sorted {findSum_arr_not_sorted(arr,target)}")
+
+def findSum_arr_sort(arr,target):
+    n = len(arr)
+    left = 0
+    right = n-1
+    
+    while (left < right):
+        if arr[left] + arr[right] == target :
+            return [left, right]
+        elif arr[left] + arr[right] > target :
+            right = right - 1
+        else:
+            left = left + 1
+        
+
+print(f"arr is sorted {findSum_arr_sort(arr,target)}")
