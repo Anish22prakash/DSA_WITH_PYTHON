@@ -1,0 +1,31 @@
+#brute force approach
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+        count = 0
+        for i in jewels:
+            for j in stones:
+                if i == j:
+                    count = count + 1
+        return count
+
+
+#solving using the hash map
+
+
+
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+       count = 0
+       hash_map = {}
+
+       for i,char in enumerate(stones):
+        if char in hash_map:
+            hash_map[char] = hash_map[char] + 1
+        else:
+            hash_map[char] = 1
+
+       for char in jewels:
+        if char in hash_map:
+            count = count + hash_map[char]
+       return count
+     
