@@ -1,0 +1,23 @@
+#brute force approach 
+class Solution(object):
+    def searchRange(self, nums, target):
+        result = [-1,-1]
+        count = 0
+        for i,num in enumerate(nums):
+            if num == target and count == 0 :
+                result[0] = i
+                count += 1
+                continue
+            if num == target and count == 1 :
+                result[1] = i
+        if result[0] != -1 and result[1] == -1:
+            result[1] = result[0]
+        return result
+            
+        
+
+            
+            
+
+       
+        
