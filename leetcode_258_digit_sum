@@ -1,0 +1,16 @@
+sum of the digit untill it reduced to the single digit
+
+take modolu of 9 , and return the remainder
+if  modolu is zero then return the 9
+
+class Solution:
+    def addDigits(self, num: int) -> int:
+        max_one_dig_num = 9
+        if num < max_one_dig_num :
+            return num
+        result = num % max_one_dig_num
+        if result == 0 :
+            return max_one_dig_num
+        else:
+            return result
+        
