@@ -1,0 +1,26 @@
+leetcode problem 202 happy number:
+-key notes
+--do square the every digit untill get the 1 
+-- used hashmap to check if encounter the same number again or not
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        usedIntger = {}
+        while True:
+            sum = 0
+            temp = n
+
+            while temp != 0:
+                sum += (temp % 10) ** 2
+                temp = temp // 10
+            if sum == 1:
+                return True
+            
+            if sum in usedIntger:
+                return False
+            usedIntger[sum] = 1 
+            n = sum
+            
+
+
+        
